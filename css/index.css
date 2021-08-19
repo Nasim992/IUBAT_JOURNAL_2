@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+    padding: 0;
+    margin: 0;
+    zoom: 0.9;
+    font-family: Roboto !important;
+    text-align: justify !important;
+    background-color: #fefefe !important;
+}
+
+:root {
+    --iubat_review_red_color: #e90f2c;
+    --iubat_review_red_color_transparent: #c82339de;
+    --iubat_review_black_color_transparent: #030000da;
+    --iubat_review_green-color: #1e5f16;
+    --iubat-review_green-color_transparent: #24d30cf3;
+    --iubat-review_text-black-color: #030000;
+    --iubat-review_white-color: white;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header ul {
+    padding: 0;
+    margin: 0;
+}
+
+.header ul li {
+    list-style: none;
+    display: inline;
+}
+
+.header ul li a {
+    text-decoration: none;
+    font-size: 40px;
+}
+
+.header .image {
+    width: 200px;
+    margin: 20px 0;
+}
+
+.banner-section iframe {
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .header .image {
+        margin: 0 auto;
+    }
+    .header ul {
+        margin-top: 20px;
+        text-align: center;
+    }
+}
+
+
+/* #################################### */
+
+
+/* Award section*/
+
+.box-shadow {
+    /* padding: 30px; */
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.12), 0 4px 5px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* border: 2px solid rgba(212, 214, 212, 0.904); */
+}
+
+
+/* GAllery  */
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 70px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+    color: #58595a;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 30px auto;
+    font-size: 18px;
+    color: #85878c;
+}
+
+
+/* Styles for the gallery */
+
+.tz-gallery {
+    padding: 40px;
+}
+
+.tz-gallery .thumbnail {
+    padding: 0;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.tz-gallery img {
+    border-radius: 2px;
+}
+
+.tz-gallery .caption {
+    padding: 26px 30px;
+    text-align: center;
+}
+
+.tz-gallery .caption h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.tz-gallery .caption p {
+    font-size: 12px;
+    color: #7b7d7d;
+    margin: 0;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+.thumbnail a>img,
+.thumbnail>img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+.img-rounded {
+    border-radius: 6px
+}
+
+.img-thumbnail {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out
+}
+
+
+/* Carouesel */
+
+.carousel img {
+    height: 650px !important;
+    width: 100vh;
+}
+
+.bg-color {
+    background-color: var(--iubat_review_green-color);
+}
+
+
+/* Header  */
+
+@media screen and (max-width: 600px) {
+    .header_heading {
+        display: none;
+    }
+}
+
+
+/* Navbar */
+
+nav {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+nav .nav-link {
+    transition: 0.5s;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav .nav-link:hover {
+    background-color: var(--iubat_review_red_color);
+    color: white;
+    border-radius: 2px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+nav .dropdown-menu {
+    background-color: var(--iubat_review_green-color) !important;
+}
+
+nav .dropdown-menu a {
+    transition: 0.3s;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav .dropdown-menu a:hover {
+    background-color: var(--iubat_review_red_color);
+    color: white;
+    border-radius: 2px;
+}
+
+.dropdown_Sub {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content_Submenu {
+    display: none;
+    position: absolute;
+    background-color: var(--iubat_review_green_color_transparent);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown_Sub:hover .dropdown-content_Submenu {
+    display: block;
+}
+
+.dropdown-menu {
+    background-color: var(--iubat_review_green_color_transparent) !important;
+}
+
+.dropdown-item {
+    color: white !important;
+}
+
+.donate {
+    background-color: var(--iubat_review_red_color);
+    color: var(--iubat_review_white_color);
+    border-radius: 2px;
+}
+
+.donate:hover {
+    background-color: var(--iubat_review_white_color);
+    color: var(--iubat_review_white_color);
+    border-radius: 2px;
+}
+
+.credit {
+    float: right !important;
+}
+
+@media screen and (max-width: 992px) {
+    .container-fluid__homepage {
+        margin-left: 0% !important;
+        margin-right: 0% !important;
+    }
+}
+
+.bg-image {
+    background-image: url('../images/bg-image-ijournal.jpg');
+    /* background-repeat:no-repeat !important; */
+    background-color: rgb(255 255 255);
+    background-size: cover !important;
+    background-blend-mode: multiply;
+    height: 500px;
+    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .bg-image {
+        display: none;
+        margin-top: 20px;
+    }
+}
+
+.bg-image__intro {
+    text-align: center;
+    color: #fff !important;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg-image__intro h3 {
+    font-size: 55px;
+    line-height: 1.0;
+    text-shadow: 2px 2px 3px #a22;
+}
+
+.bg-image__intro h5 {
+    font-size: 35px;
+}
+
+.bg-image__intro p {
+    font-size: 20px;
+}
+
+.bg-image__intro a {
+    font-size: 18px;
+    color: white;
+}
+
+.guidelines div ul li {
+    list-style-type: square;
+    font-size: 18px;
+}
+
+.indexform button {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.indexform button:hover {
+    color: #0b4953 !important;
+}
+
+.volumeissue {
+    cursor: pointer;
+}
+
+.volumeissue:hover {
+    color: #17defe !important;
+}
+
+.colorbtn {
+    color: #17defe !important;
+}
+
+.jumbotron__papername {
+    font-size: 19px !important;
+    color: #000000!important;
+    text-align: justify !important;
+    font-weight: 500;
+}
+
+.jumbotron {
+    background-color: rgb(254 254 254 / 80%) !important;
+}
+
+.jumbotron h5 {
+    font-weight: bold !important;
+    font-size: 20px;
+}
+
+.jumbotron p {
+    font-size: 16px;
+}
+
+.jumbotron a {
+    font-size: 16px;
+}
