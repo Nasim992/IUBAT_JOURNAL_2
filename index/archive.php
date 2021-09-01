@@ -250,7 +250,7 @@
                             <!-- Dashboard section starts  -->
                             <tr>
                                 <td>
-                                    <div class="jumbotron text-justify  mb-0 bg-transparent">
+                                    <div class="text-justify  mb-0 bg-transparent">
                                         <a class="bg-transparent"style="font-size:18px;border:none;outline:none;font-weight:500;color:#098680;text-align:left;"><?php echo htmlentities($result->papername);?></a>
                                         <div class="d-flex justify-content-between">
                                             <div>

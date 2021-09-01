@@ -1,6 +1,6 @@
-<footer style="background-color:#1e5f16;" class="p-3">
+<footer style="background-color:#1e5f16;"id="footer" class="p-3">
 
-    <div class="container text-white text-center">
+    <div class="container text-white text-center footer_contents">
 
         <a href="<?php echo $BASE_URL; ?>"><img style="height:100px" src="<?php echo $IMAGE_DIR; ?>Iubat-logo.png"></a>
         <h4>IUBAT Review</h4>

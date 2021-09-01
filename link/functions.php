@@ -35,17 +35,36 @@ function redirect($location){
     return header("Location: {$location}");
 }
 //  Functions that logged in or not 
-function checkLoggedInOrNot() {
+function checkLoggedInOrNot($location) {
     if(strlen($_SESSION['alogin'])=="")  
     {     
-    echo "<script type='text/javascript'> document.location = '../login'; </script>";  
+        return header("Location: {$location}");
     }   
 }
+
+function IsAuthorLoggedIn($authoremail,$location){
+      global $dbh;
+      $sql = "SELECT author.id,author.username,author.title,author.firstname,author.middlename,author.lastname,author.primaryemail,author.primaryemailcc,author.secondaryemail,author.secondaryemailcc,author.contact,author.address,author.password from author where primaryemail='$authoremail'"; 
+      $query = $dbh->prepare($sql); 
+      $query->execute(); 
+      $results=$query->fetchAll(PDO::FETCH_OBJ); 
+      if($query->rowCount() === 0) 
+      {
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">Logged in Fail.If dont have any account please sign up</p>
+                  </div>
+            </div>
+        ');
+        redirect($BASE_URL."layout/login");
+      }
+} 
 
 // Author is Available or not
 function is_author_available($authoremail) {
     global $dbh;
-    $query = "SELECT COUNT(*) as total_rows FROM user where email='$authoremail'";
+    $query = "SELECT COUNT(*) as total_rows FROM author where primaryemail='$authoremail'";
     $stmt = $dbh->prepare($query);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -274,6 +293,117 @@ function returnMaxValue($TABLE_NAME,$FIELD_NAME){
     $stmt = $dbh->prepare($query);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    $maximumyear = $row['total_rows'];
-    return $maximumyear;
+    $maximum = $row['total_rows'];
+    return $maximum;
 }
+
+
+// Functions Check Academic Editor logged in or not 
+function IsAcademicEditorLoggedIn($email) {
+    global $dbh;
+    $sql = "SELECT author.id,author.username,author.title,author.firstname,author.middlename,author.lastname,author.primaryemail,author.primaryemailcc,author.secondaryemail,author.secondaryemailcc,author.contact,author.address,author.password,author.academiceditor from author where primaryemail='$email' and academiceditor IS NOT NULL"; 
+    $query = $dbh->prepare($sql); 
+    $query->execute(); 
+    $results=$query->fetchAll(PDO::FETCH_OBJ); 
+    $cnt=1;
+    if($query->rowCount() === 0) 
+    {
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">Logged in Fail.If dont have any account please sign up</p>
+                  </div>
+            </div>
+        ');
+        redirect($BASE_URL."layout/login");
+    }
+}
+// Functions Check Academic Editor Logged in or not 
+
+// Functions that Academic Editor is Logged in or NOT
+function IsAssociateEditorLoggedIn($email) {
+    global $dbh;
+    $sql = "SELECT author.id,author.username,author.title,author.firstname,author.middlename,author.lastname,author.primaryemail,author.primaryemailcc,author.secondaryemail,author.secondaryemailcc,author.contact,author.address,author.password,author.academiceditor from author where primaryemail='$email' and associateeditor IS NOT NULL"; 
+    $query = $dbh->prepare($sql); 
+    $query->execute(); 
+    $results=$query->fetchAll(PDO::FETCH_OBJ); 
+    $cnt=1;
+    if($query->rowCount() === 0) 
+    {
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">Logged in Fail.If dont have any account please sign up</p>
+                  </div>
+            </div>
+        ');
+        redirect($BASE_URL."layout/login");
+    }
+}
+// Functions that Associate Editor is LOgged in or NOT
+
+// Functions that Chiefeditor loggedin or not 
+function IsChiefEditorLoggedIn($editoremail) {
+    global $dbh;
+    $sql = "SELECT chiefeditor.id,chiefeditor.fullname,chiefeditor.password,chiefeditor.contact FROM chiefeditor WHERE email='$editoremail'"; 
+    $query = $dbh->prepare($sql); 
+    $query->execute(); 
+    $results=$query->fetchAll(PDO::FETCH_OBJ); 
+    $cnt=1;
+    if($query->rowCount() === 0) 
+    {
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">Logged in Fail.If dont have any account please sign up</p>
+                  </div>
+            </div>
+        ');
+        redirect($BASE_URL."layout/login");
+    }
+}
+// Functions that Chiefeditor Loggedin or not
+
+// Functions that Admin is logged in or not 
+function IsAdminLoggedIn($adminemail) {
+    global $dbh;
+    $sql = "SELECT admin.id,admin.fullname,admin.password,admin.contact FROM admin WHERE email='$adminemail'"; 
+    $query = $dbh->prepare($sql); 
+    $query->execute();  
+    $results=$query->fetchAll(PDO::FETCH_OBJ); 
+    $cnt=1;
+    if($query->rowCount() === 0)  
+    {
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">Logged in Fail.If dont have any account please sign up</p>
+                  </div>
+            </div>
+        ');
+        redirect($BASE_URL."layout/login");
+    }
+}
+// Functions that Admin is logged in or not 
+
+// Functions that reviewer is logged in or not 
+function IsReviewerLoggedIn($authoremail) {
+    global $dbh;
+    $sql = "SELECT author.id,author.username,author.primaryemail,author.password,author.contact from author where primaryemail='$authoremail' and reviewerselection IS NOT NULL"; 
+    $query = $dbh->prepare($sql); 
+    $query->execute(); 
+    $results=$query->fetchAll(PDO::FETCH_OBJ); 
+    $cnt=1;
+    if($query->rowCount() === 0)  
+    {
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">Logged in Fail.If dont have any account please sign up</p>
+                  </div>
+            </div>
+        ');
+        redirect($BASE_URL."layout/login");
+    }
+}
+// Functions that reviewer is logged in or not

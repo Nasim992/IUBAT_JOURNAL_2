@@ -1,5 +1,5 @@
 <?php 
-include('link/config.php');
+include('../link/config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

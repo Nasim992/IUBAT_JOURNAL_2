@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Aim and Scope";
+     $TITLE = "Aim and Scope - IUBAT Review";
      include "../layout/toplayout_user.php";
      include "../layout/navbar.php";
 ?>

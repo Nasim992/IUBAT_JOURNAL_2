@@ -85,7 +85,7 @@ $maximumyear = returnMaxValue($ARCHIVE_DB,"versionissue");
                                     <?php $i=$i+1; }  ?>
                                 </div>
                                 <!---- Accordions Section ends  ---->
-                                 <a style="font-size:19px;" class="text-dark float-right p-3" href="archive"><i>Find more...</i></a>
+                                 <a style="font-size:19px;" class="text-dark float-right p-3" href="<?php echo $BASE_URL; ?>index/archive"><i>Find more...</i></a>
                             </td>
                         </tr>
                         <?php   }  ?>
