@@ -1,6 +1,5 @@
 <?php
 $subject = "Paper Rejected";
-
 $msg = "
 <html>
 <body>
@@ -23,6 +22,3 @@ $msg = "
 </html>
 
 ";
-$headers = "From: journal.iubat@gmail.com\r\n";
-$headers .= "Content-type: text/html\r\n";
-?>

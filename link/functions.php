@@ -1,4 +1,34 @@
 <?php 
+
+// Mysqli Query Function starts Here 
+function query($query){
+	global $link;
+	return mysqli_query($link, $query);
+}
+// Mysqli Query Function Ends Here
+
+// Successfully Connection Section Starts here
+function confirm($result) {
+    global $link;
+    if(!$result) {
+        die("QUERY FAILED" . mysqli_error($link));
+    } 
+}
+// Successfully Connection Section Ends Here
+
+// Number of rows count section starts Here
+function row_count($result){
+   return mysqli_num_rows($result);
+}
+// Number of rows count section ends here
+
+// Mysqli escape string section starts here
+function escape($string) {
+    global $link;
+	return mysqli_real_escape_string($link, $string);
+}
+// Mysqli escape string section ends here
+
 //  Set Message Function starts Here 
 function set_message($message) {
     if(!empty($message)){ 
@@ -57,7 +87,7 @@ function IsAuthorLoggedIn($authoremail,$location){
                   </div>
             </div>
         ');
-        redirect($BASE_URL."layout/login");
+        redirect($location);
       }
 } 
 
@@ -343,7 +373,7 @@ function IsAssociateEditorLoggedIn($email) {
 // Functions that Associate Editor is LOgged in or NOT
 
 // Functions that Chiefeditor loggedin or not 
-function IsChiefEditorLoggedIn($editoremail) {
+function IsChiefEditorLoggedIn($editoremail,$location) {
     global $dbh;
     $sql = "SELECT chiefeditor.id,chiefeditor.fullname,chiefeditor.password,chiefeditor.contact FROM chiefeditor WHERE email='$editoremail'"; 
     $query = $dbh->prepare($sql); 
@@ -351,7 +381,7 @@ function IsChiefEditorLoggedIn($editoremail) {
     $results=$query->fetchAll(PDO::FETCH_OBJ); 
     $cnt=1;
     if($query->rowCount() === 0) 
-    {
+      {
         set_message('
         <div class="notification-div">
                   <div class="container" id="flash-message">
@@ -359,8 +389,8 @@ function IsChiefEditorLoggedIn($editoremail) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."layout/login");
-    }
+        redirect($location);
+      }
 }
 // Functions that Chiefeditor Loggedin or not
 

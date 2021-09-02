@@ -40,7 +40,7 @@
         <!-- Chiefeditor Logged in or not -->
         <?php }else if(TotalNumberOfRowsWhere($CHIEFEDITOR_DB,"email",$email)>0){ ?>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownAbout">
-        <a href="<?php echo $BASE_URL; ?>chiefeditor/dashboard" class="dropdown-item"><i class="fas fa-tachometer-alt"></i>&nbsp Dashboard</a>
+        <a href="<?php echo $BASE_URL; ?>chiefeditor/" class="dropdown-item"><i class="fas fa-tachometer-alt"></i>&nbsp Dashboard</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/publishedpaper" class="dropdown-item"><i class="far fa-newspaper"></i>&nbsp Published Paper</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/unpublishedpaper" class="dropdown-item"><i class="far fa-newspaper"></i>&nbsp Unpublished Paper</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/updateprofile" class="dropdown-item"><i class="fas fa-user-shield"></i>&nbsp Update Profile</a>
@@ -129,7 +129,7 @@
         <a href="<?php echo $BASE_URL; ?>author/paperstatus"  class="dropdown-item" title="Chech your paper status"><i class="fas fa-exclamation-circle"></i>&nbsp Paper Status</a>
         <a href="<?php echo $BASE_URL; ?>author/updateprofile"  class="dropdown-item" title="Update your profile"><i class="fas fa-sync"></i>&nbsp Update profile</a>
         <a href="<?php echo $BASE_URL; ?>author/changepassword"  class="dropdown-item"title="Change your password"><i class="fas fa-unlock-alt"></i>&nbsp Change password</a>
-        <a href="<?php echo $BASE_URL; ?>author/reviewedpaper"  class="dropdown-item" title="See your Reviewed paper"><i class="far fa-newspaper"></i>&nbsp Reviewed paper</a>
+        <a href="<?php echo $BASE_URL; ?>author/reviewerstatus"  class="dropdown-item" title="See your Reviewed paper"><i class="far fa-newspaper"></i>&nbsp Reviewed paper</a>
         </div>
         <?php } ?>
 

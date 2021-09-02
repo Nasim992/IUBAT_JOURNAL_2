@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Author dashboard - IUBAT Review";
+     $TITLE = "Upload Paper- IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAuthorLoggedIn($email,$BASE_URL."layout/login");

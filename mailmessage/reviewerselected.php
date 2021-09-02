@@ -1,8 +1,5 @@
 <?php
-$subject = "Reviewer Request in IUBAT Review";
-
-include 'url.php'; 
-    
+$subject = "Reviewer Request in IUBAT Review"; 
 $msg = "
 <html>
 <body>
@@ -21,7 +18,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href='$url/acceptrequestreviewer.php?paperid=$paperid&email=$pemail'>CLICK HERE TO ACCEPT
+             'href=$BASE_URL.'acceptrequestreviewer.php?paperid=$paperid&email=$pemail'>CLICK HERE TO ACCEPT
    </a>
    <p>You have been selected as an Editor till <b>$endingdate</b></p>
    <br>
@@ -34,7 +31,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href='$url/rejectrequestreviewer.php?paperid=$paperid&email=$pemail'>CLICK HERE TO REJECT
+             'href=$BASE_URL.'rejectrequestreviewer.php?paperid=$paperid&email=$pemail'>CLICK HERE TO REJECT
    </a>
    <br>
 <hr>
@@ -49,8 +46,4 @@ $msg = "
   </p>
 </body>
 </html>
-
 ";
-$headers = "From: journal.iubat@gmail.com\r\n";
-$headers .= "Content-type: text/html\r\n";
-?>

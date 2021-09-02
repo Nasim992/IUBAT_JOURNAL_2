@@ -2,8 +2,6 @@
 
 $subject = "Editor Request in IUBAT Review";
   
-include 'url.php';
-
 $msg = "
 <html>
 <body>
@@ -22,7 +20,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href='$url/acceptrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO ACCEPT
+             'href=$BASE_URL.'acceptrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO ACCEPT
    </a>
    <p>You have been selected as an Editor till <b>$endingdate</b></p>
    <br>
@@ -35,7 +33,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href='$url/rejectrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO REJECT
+             'href=$BASE_URL.'rejectrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO REJECT
    </a>
    <br>
 <hr>
@@ -52,7 +50,3 @@ $msg = "
 </html>
 
 ";
-$headers = "From: journal.iubat@gmail.com\r\n";
-$headers .= "Content-type: text/html\r\n";
- 
-?>

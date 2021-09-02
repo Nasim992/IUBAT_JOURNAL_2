@@ -1,8 +1,6 @@
 <?php
 $subject = "New paper uploaded on IUBAT Review";
 
-include 'url.php'; 
- 
 $msg = "
 <html>
 <body>
@@ -21,7 +19,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href='$url/login'>CLICK HERE TO LOG IN TO THE SYSTEM
+             'href=$BASE_URL.'login'>CLICK HERE TO LOG IN TO THE SYSTEM
    </a>
    <br>
 <hr>
@@ -38,6 +36,4 @@ $msg = "
 </html>
 
 ";
-$headers = "From: journal.iubat@gmail.com\r\n";
-$headers .= "Content-type: text/html\r\n";
 ?>

@@ -3,8 +3,6 @@
 $subject = "IUBAT Review Account Activation";
 
 $msg = "
-<html>
-<body>
   <h1><b>Congratulations !</b></h1>
   <p> You have Created a Account Successfully on IUBAT Review.Now Click on the following link for Verify your account.</p><br>
 
@@ -16,7 +14,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href='$BASE_URL/activate.php?email=$pemail&code=$validation_code'>CLICK HERE TO VERIFY
+             'href=$BASE_URL.'activate.php?email=$pemail&code=$validation_code'>CLICK HERE TO VERIFY
    </a>
    <br>
    <hr>
@@ -29,10 +27,6 @@ $msg = "
     <img height='100px' width='100px'src='https://iubat.edu/wp-content/uploads/2019/01/Iubat-logo-300x263.png'>
    </i>
   </p>
-</body>
-</html>
-
 ";
-$headers = "Content-type: text/html\r\n";
- 
+
 ?>

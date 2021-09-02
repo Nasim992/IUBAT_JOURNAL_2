@@ -2,7 +2,7 @@
 session_start();
 include 'config.php';
 include 'functions.php';
-
+include '../mail_functions.php';
 // Author Login Form - Login
 if(isset($_POST['author-login'])) {
 
@@ -123,7 +123,7 @@ if(isset($_POST['editor-login'])) {
                       </div>
                 </div>
             ');
-            redirect($BASE_URL."chiefeditor");
+            redirect($BASE_URL."chiefeditor/");
        }
        else {
     // Chiefeditor 
@@ -241,7 +241,7 @@ if(isset($_POST['sign-up'])){
                   </div>
             </div>
         ');
-        redirect($BASE_URL."index/login");
+        redirect($BASE_URL."layout/login");
     }else
     {
     $sql="INSERT INTO  author(username,title,firstname,middlename,lastname,primaryemail,primaryemailcc,secondaryemail,secondaryemailcc,password,contact,address,validation_code) VALUES(:username,:title,:firstname,:middlename,:lastname,:pemail,:pemailcc,:semail,:semailcc,:userpassword,:contact,:address,:validation_code)";
@@ -272,7 +272,7 @@ if(isset($_POST['sign-up'])){
                 // Activation Link sending Messages starts here
                 include '../mailmessage/accountactivation.php'; 
                 // Activation Link sending Messages section ends here                  
-                send_mail($pemail, $subject, $msg);
+                send_mail($pemail, $subject, $msg,$FORM_EMAIL,$FORM_EMAIL_PASS);
                 set_message('
                 <div class="notification-div">
                           <div class="container" id="flash-message">
@@ -280,7 +280,7 @@ if(isset($_POST['sign-up'])){
                           </div>
                     </div>
                 ');
-                redirect($BASE_URL."index/login");
+                redirect($BASE_URL."layout/login");
     } else{
         set_message('
         <div class="notification-div">
@@ -289,7 +289,7 @@ if(isset($_POST['sign-up'])){
                   </div>
             </div>
         ');
-        redirect($BASE_URL."index/login");
+        redirect($BASE_URL."layout/login");
     }     
     }
 }
@@ -316,7 +316,7 @@ if(isset($_POST['rsubmit']))  {
         // Update Password validation code 
 
     // Check that the email is available or not in the database
-    if(send_mail($pemail, $subject, $msg)) {
+    if(send_mail($pemail, $subject, $msg,$FORM_EMAIL,$FORM_EMAIL_PASS)) {
         set_message('
         <div class="notification-div">
                   <div class="container" id="flash-message">
@@ -324,7 +324,7 @@ if(isset($_POST['rsubmit']))  {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."index/login");
+        redirect($BASE_URL."layout/login");
     }
     else {
         set_message('
@@ -334,7 +334,7 @@ if(isset($_POST['rsubmit']))  {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."index/login");
+        redirect($BASE_URL."layout/login");
         }
     }else
     {
@@ -345,6 +345,6 @@ if(isset($_POST['rsubmit']))  {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."index/login");
+        redirect($BASE_URL."layout/login");
     }
 }

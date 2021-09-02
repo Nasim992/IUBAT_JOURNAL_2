@@ -1,6 +1,6 @@
 <?php 
 session_start();
-error_reporting(E_ALL);
+error_reporting(0);
 include '../link/config.php';
 include '../link/functions.php';
 include '../link/count.php';
@@ -41,6 +41,7 @@ if (isset($_SESSION['alogin'])){
     <link rel="stylesheet" href="<?php echo $CSS_DIR; ?>fontawesome.v5.3.1.all.css">
     <link rel="stylesheet" href="<?php echo $CSS_DIR; ?>fontawesome.min.css">
     <link rel="stylesheet" href="<?php echo $CSS_DIR; ?>fontawesome.css">
+    <link rel="stylesheet" href="<?php echo $CSS_DIR; ?>jquery.dataTables.min.css">
 
     <title><?php echo empty($TITLE)?"IUBAT Review":$TITLE; ?></title>
 

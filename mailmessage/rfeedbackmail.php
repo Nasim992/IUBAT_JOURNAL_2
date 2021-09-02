@@ -1,12 +1,9 @@
 <?php
 $subject = "Paper Reviewed";
 
-include 'url.php';  
- 
 $msg = "$paperid - this paper has been reviewed.
-Please login to see the feedback of the reviewer -- $url/login";
+Please login to see the feedback of the reviewer -- $BASE_URL.login";
     
-   
 $msg = "
 <html>
 <body>
@@ -23,7 +20,7 @@ $msg = "
             border:none;
             border-radius:10px;
             font-weight:bold;
-            'href='$url/login'>CLICK HERE TO LOG IN
+            'href=$BASE_URL.'login'>CLICK HERE TO LOG IN
   </a>
 <br>
   <hr>
@@ -40,6 +37,3 @@ $msg = "
 </html>
 
 ";
-$headers = "From: journal.iubat@gmail.com\r\n";
-$headers .= "Content-type: text/html\r\n";
-?>

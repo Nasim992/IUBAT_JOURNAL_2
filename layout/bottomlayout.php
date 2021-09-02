@@ -6,6 +6,7 @@
     <!-- Essentials Links  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script src="<?php echo $JS_DIR; ?>login.js"></script>
+    <script src="<?php echo $JS_DIR; ?>jquery.dataTables.min.js"></script>
     <script> baguetteBox.run('.tz-gallery'); </script>
     <!-- Particle Js Script -->
     
@@ -198,6 +199,28 @@ function handlepasschange() {
     });
 }
 // Checking that the repeat pass is matched or not section ends here  section is ends here 
+
+$(document).ready(function() {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+
+    
+    // Chiefeditor published paper
+
+    $(document).ready(function() {
+        $("#heading-input").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#heading-table tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+    // Aim and scope readmore section starts here 
+    document.querySelector('#read-more').addEventListener('click', function() {
+        document.querySelector('#content').style.height = 'auto';
+        this.style.display = 'none';
+    });
 </script>
      
 

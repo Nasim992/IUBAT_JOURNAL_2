@@ -1,8 +1,9 @@
 <?php 
-     $TITLE = "Author dashboard - IUBAT Review";
+     $TITLE = "Upload Paper details- IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAuthorLoggedIn($email,$BASE_URL."layout/login");
+     
      include "../layout/navbar.php";
      // Co Authors Selection Section Starts Here 
     if(isset($_POST['submit-firsto']))
@@ -10,7 +11,10 @@
     $numberOfCoAuthor = $_POST['co-authors-number'];
     $papername = $_POST['paper-title'];
     }
+    empty($numberOfCoAuthor)?$numberOfCoAuthor=0: $numberOfCoAuthor= $_POST['co-authors-number'];
     // Co- Authors Selection Section Ends Here 
+
+    $authoremail = $email;
 ?>
 
 <head>
@@ -37,7 +41,6 @@
     </style>
 </head>
 
-
     <!-- Author showing header sections ends   -->
     <div id="mySidebar" class="sidebar">
          <?php  include '../layout/sidebar.php';?>
@@ -48,7 +51,7 @@
         <div class="container">
             <div>
                 <!-- input file section starts here  -->
-                <form class="author-form" method="post" enctype="multipart/form-data">
+                <form class="author-form" method="post" action="../link/upload_paper_details.php" enctype="multipart/form-data">
                     <div class="">
                         <h1 class="text-center" style="font-size:18px;"><b>UPLOAD PAPER</b></h1>
                         <br>
