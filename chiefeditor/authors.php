@@ -15,7 +15,7 @@
         <a href="#"><span class="openbtn" onclick="openNav()" id="closesign">☰</span></a>
         <a href="javascript:void(0)" class="closebtn" id="closesignof" onclick="closeNav()">×</a>
         <div class="container">
-            <?php  display_message();?>
+        <?php echo display_message(); ?>
             <h4>AUTHOR</h4>
             <hr class="bg-secondary">
             <div class="table-responsive p-4">

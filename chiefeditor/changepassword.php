@@ -38,7 +38,7 @@
         <a href="#"><span class="openbtn" onclick="openNav()" id="closesign">☰</span></a>
         <a href="javascript:void(0)" class="closebtn" id="closesignof" onclick="closeNav()">×</a>
         <div class="container">
-            <?php display_message(); ?>
+        <?php echo display_message(); ?>
             <h6>CHANGE YOUR PASSWORD</h6>
             <hr class="bg-secondary">
             <form class="change-password-form" action="../link/changepassword.php" method="post">

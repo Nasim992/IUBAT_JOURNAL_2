@@ -221,6 +221,43 @@ $(document).ready(function() {
         document.querySelector('#content').style.height = 'auto';
         this.style.display = 'none';
     });
+
+    $(function($) {
+        $('#example').DataTable();
+
+        $('#example2').DataTable({
+            "scrollY": "300px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+
+        $('#example3').DataTable();
+    });
+    $(document).ready(function() {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+    $(document).ready(function() {
+        $('#dtBasicExample1').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+
+    $(function($) {
+        $('#example').DataTable();
+
+        $('#example2').DataTable({
+            "scrollY": "300px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+
+        $('#example3').DataTable();
+    });
+
+    $(document).ready(function() {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
 </script>
      
 

@@ -18,9 +18,12 @@
         <a href="<?php echo $BASE_URL; ?>admin/archivepaper" class="sidebars"><i class="fa fa-table" aria-hidden="true"></i>&nbsp Archive paper</a>
          <a href="#" class="sidebars"></a>
 
+         <a href="#"  class="pt-5"><h4>Welcome, Back</h6><br><h6 class="text-danger"><i><b><?php echo returnSingleValue($ADMIN_DB,"fullname","email",$email); ?></b></i></h6></a>
+         
+
 <!-- Chief editor Logged IN -->
      <?php }else if(TotalNumberOfRowsWhere($CHIEFEDITOR_DB,"email",$email)>0){ ?>
-        <a href="<?php echo $BASE_URL; ?>chiefeditor/dashboard" class="sidebars pt-5"><i class="fas fa-tachometer-alt"></i>&nbsp Dashboard</a>
+        <a href="<?php echo $BASE_URL; ?>chiefeditor/" class="sidebars pt-5"><i class="fas fa-tachometer-alt"></i>&nbsp Dashboard</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/publishedpaper" class="sidebars"><i class="far fa-newspaper"></i>&nbsp Published Paper</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/unpublishedpaper" class="sidebars"><i class="far fa-newspaper"></i>&nbsp Unpublished Paper</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/updateprofile" class="sidebars"><i class="fas fa-user-shield"></i>&nbsp Update Profile</a>
@@ -33,8 +36,10 @@
         <a href="<?php echo $BASE_URL; ?>chiefeditor/selecteditor" class="sidebars"><i class="fas fa-users-cog"></i>&nbsp Select Editor</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/editordetails" class="sidebars"><i class="fas fa-users-cog"></i>&nbsp Editor</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/editored" class="sidebars"><i class="fas fa-users-cog"></i>&nbsp Editored</a>
-        <a href="<?php echo $BASE_URL; ?>chiefeditor/feedback" class="sidebars"><i class="fas fa-comments"></i>&nbsp Feedback</a>
+        <a href="<?php echo $BASE_URL; ?>chiefeditor/rfeedback" class="sidebars"><i class="fas fa-comments"></i>&nbsp Reviewer Feedback</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/archive" class="sidebars"><i class="fa fa-table" aria-hidden="true"></i>&nbsp Archive</a>
+
+        <a href="#"  class="pt-5"><h4>Welcome, Back</h6><br><h6 class="text-danger"><i><b><?php echo returnSingleValue($CHIEFEDITOR_DB,"fullname","email",$email); ?></b></i></h6></a>
 
 <!-- Associate Editor Logged In or not -->
 <?php }else if(TotalNumberOfRowsWhereTWO_AND($USER_DB,"primaryemail","associateeditor",$email,1)>0){ ?>

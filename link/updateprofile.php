@@ -42,3 +42,42 @@ include 'functions.php';
   }
   }
 
+// Update Chiefeditor profile
+
+  //   Update Author Profile Section starts here  
+
+  if(isset($_POST['updatachiefeditor']))
+  { 
+
+  $editoremails=$_POST['editoremails'];
+  $fullname=$_POST['fullname'];
+  $email=$_POST['email'];
+  $contact=$_POST['contact'];
+
+
+  $sqlauthorupdate = "update chiefeditor set fullname='$fullname',email='$email',contact='$contact' where email='$editoremails'";
+
+  if(mysqli_query($link,$sqlauthorupdate)) {
+
+    set_message('
+    <div class="notification-div">
+              <div class="container" id="flash-message">
+              <p class="alert alert-success alert-dismissible" id="message">Profile Updated Successfully</p>
+              </div>
+        </div>
+    ');
+    redirect($BASE_URL."chiefeditor/updateprofile");
+} 
+else {
+  set_message('
+  <div class="notification-div">
+            <div class="container" id="flash-message">
+            <p class="alert alert-warning alert-dismissible" id="message">Something went Wrong !</p>
+            </div>
+      </div>
+  ');
+  redirect($BASE_URL."chiefeditor/updateprofile");
+}
+}
+
+// Update Author Profile Section ends here 

@@ -45,7 +45,6 @@
         <a href="<?php echo $BASE_URL; ?>chiefeditor/unpublishedpaper" class="dropdown-item"><i class="far fa-newspaper"></i>&nbsp Unpublished Paper</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/updateprofile" class="dropdown-item"><i class="fas fa-user-shield"></i>&nbsp Update Profile</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/changepassword" class="dropdown-item"><i class="fas fa-unlock-alt"></i>&nbsp Change password</a>
-        <a href="<?php echo $BASE_URL; ?>chiefeditor/changepasswordchief" class="dropdown-item"><i class="fas fa-unlock-alt"></i>&nbsp Change password(chief)</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/admin" class="dropdown-item"><i class="fas fa-users-cog"></i>&nbsp Admin Pannel</a>
         <!-- <a href="addadmin" class="sidebars"><i class="fas fa-users-cog"></i>&nbsp Add Admin</a> -->
         <a href="<?php echo $BASE_URL; ?>chiefeditor/authors" class="dropdown-item"><i class="fas fa-users-cog"></i>&nbsp Author States</a>
@@ -53,9 +52,8 @@
         <a href="<?php echo $BASE_URL; ?>chiefeditor/selecteditor" class="dropdown-item"><i class="fas fa-users-cog"></i>&nbsp Select Editor</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/editordetails" class="dropdown-item"><i class="fas fa-users-cog"></i>&nbsp Editor</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/editored" class="dropdown-item"><i class="fas fa-users-cog"></i>&nbsp Editored</a>
-        <a href="<?php echo $BASE_URL; ?>chiefeditor/feedback" class="dropdown-item"><i class="fas fa-comments"></i>&nbsp Feedback</a>
+        <a href="<?php echo $BASE_URL; ?>chiefeditor/rfeedback" class="dropdown-item"><i class="fas fa-comments"></i>&nbsp Reviewer Feedback</a>
         <a href="<?php echo $BASE_URL; ?>chiefeditor/archive" class="dropdown-item"><i class="fa fa-table" aria-hidden="true"></i>&nbsp Archive</a>
-        <a href="<?php echo $BASE_URL; ?>chiefeditor/archivepaper" class="dropdown-item"><i class="fa fa-table" aria-hidden="true"></i>&nbsp Archive paper</a>
         </div>
 
         <!-- Associate Editor  -->
