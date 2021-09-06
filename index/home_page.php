@@ -127,7 +127,7 @@ $maximumyear = returnMaxValue($ARCHIVE_DB,"versionissue");
                                 $authoremail = htmlentities($result->authoremail);
                                 $publishdatestring = htmlentities($result->pdate);
                                 $publishdate = date("d-M-Y", strtotime($publishdatestring));
-                                include 'link/selectauthorname.php'; ?>
+                               // include 'link/selectauthorname.php'; ?>
                             <!-- <form action="paper-download" class="indexform" method="post">
                               -->
                                 <a class="bg-transparent" style="color:black;font-size: 17px;border:none;outline:none;font-weight:500;text-align:left;cursor:pointer;"

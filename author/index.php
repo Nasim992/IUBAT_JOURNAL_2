@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Author dashboard - IUBAT Review";
+     $TITLE = "Dashboard - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAuthorLoggedIn($email,$BASE_URL."layout/login");
@@ -18,7 +18,8 @@
         <div class="container">
                 <?php echo display_message(); ?>
             <!-- Progress bar section starts here  -->
-            <div class="row">
+           <!-- Progress bar section starts here  -->
+           <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <a href="paperstatus">
                         <div class="card card-statistic-1">
@@ -30,10 +31,10 @@
                                     <h4>Accepted</h4>
                                 </div>
                                 <div class="card-body">
-                                    <?php echo total_published_author($email); ?>
+                                    <?php echo total_published_author($authoremail); ?>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </a>
                 </div>
 
@@ -48,7 +49,7 @@
                                     <h4>Under Review</h4>
                                 </div>
                                 <div class="card-body">
-                                    <?php echo total_unpublished_author($email); ?>
+                                    <?php echo total_unpublished_author($authoremail); ?>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +67,7 @@
                                     <h4>Rejected</h4>
                                 </div>
                                 <div class="card-body">
-                                    <?php echo total_reject($email) ;?>
+                                    <?php echo total_reject($authoremail) ;?>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +85,7 @@
                                     <h4>Total</h4>
                                 </div>
                                 <div class="card-body">
-                                    <?php echo total_paper($email); ?>
+                                    <?php echo total_paper($authoremail); ?>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +105,7 @@
                                 </div>
                                 <div class="">
                                     <?php 
-                                     if( reviewed($email) == 0) {?> 
+                                     if( reviewed($authoremail) == 0) {?> 
                                     <p style="font-size:16px;" class="text-danger"><i class="fas fa-times-circle"></i>
                                         <?php  echo "Not Selected"; ?></p>
                                     <?php } else { ?>
@@ -127,7 +128,7 @@
                                     <h4>Reviewed paper</h4>
                                 </div>
                                 <div class="card-body">
-                                    <?php echo feedbackr($email); ?>
+                                    <?php echo feedbackr($authoremail); ?>
                                 </div>
                             </div>
                         </div>

@@ -329,9 +329,9 @@ function returnMaxValue($TABLE_NAME,$FIELD_NAME){
 
 
 // Functions Check Academic Editor logged in or not 
-function IsAcademicEditorLoggedIn($email) {
+function IsAcademicEditorLoggedIn($editoremail,$location) {
     global $dbh;
-    $sql = "SELECT author.id,author.username,author.title,author.firstname,author.middlename,author.lastname,author.primaryemail,author.primaryemailcc,author.secondaryemail,author.secondaryemailcc,author.contact,author.address,author.password,author.academiceditor from author where primaryemail='$email' and academiceditor IS NOT NULL"; 
+    $sql = "SELECT author.id,author.username,author.title,author.firstname,author.middlename,author.lastname,author.primaryemail,author.primaryemailcc,author.secondaryemail,author.secondaryemailcc,author.contact,author.address,author.password,author.academiceditor from author where primaryemail='$editoremail' and academiceditor IS NOT NULL"; 
     $query = $dbh->prepare($sql); 
     $query->execute(); 
     $results=$query->fetchAll(PDO::FETCH_OBJ); 
@@ -345,15 +345,15 @@ function IsAcademicEditorLoggedIn($email) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."layout/login");
+        redirect($location);
     }
 }
 // Functions Check Academic Editor Logged in or not 
 
 // Functions that Academic Editor is Logged in or NOT
-function IsAssociateEditorLoggedIn($email) {
+function IsAssociateEditorLoggedIn($editoremail,$location) {
     global $dbh;
-    $sql = "SELECT author.id,author.username,author.title,author.firstname,author.middlename,author.lastname,author.primaryemail,author.primaryemailcc,author.secondaryemail,author.secondaryemailcc,author.contact,author.address,author.password,author.academiceditor from author where primaryemail='$email' and associateeditor IS NOT NULL"; 
+    $sql = "SELECT author.id,author.username,author.title,author.firstname,author.middlename,author.lastname,author.primaryemail,author.primaryemailcc,author.secondaryemail,author.secondaryemailcc,author.contact,author.address,author.password,author.academiceditor from author where primaryemail='$editoremail' and associateeditor IS NOT NULL"; 
     $query = $dbh->prepare($sql); 
     $query->execute(); 
     $results=$query->fetchAll(PDO::FETCH_OBJ); 
@@ -367,7 +367,7 @@ function IsAssociateEditorLoggedIn($email) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."layout/login");
+        redirect($location);
     }
 }
 // Functions that Associate Editor is LOgged in or NOT
@@ -395,7 +395,7 @@ function IsChiefEditorLoggedIn($editoremail,$location) {
 // Functions that Chiefeditor Loggedin or not
 
 // Functions that Admin is logged in or not 
-function IsAdminLoggedIn($adminemail) {
+function IsAdminLoggedIn($adminemail,$location) {
     global $dbh;
     $sql = "SELECT admin.id,admin.fullname,admin.password,admin.contact FROM admin WHERE email='$adminemail'"; 
     $query = $dbh->prepare($sql); 
@@ -411,13 +411,13 @@ function IsAdminLoggedIn($adminemail) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."layout/login");
+        redirect($location);
     }
 }
 // Functions that Admin is logged in or not 
 
 // Functions that reviewer is logged in or not 
-function IsReviewerLoggedIn($authoremail) {
+function IsReviewerLoggedIn($authoremail,$location) {
     global $dbh;
     $sql = "SELECT author.id,author.username,author.primaryemail,author.password,author.contact from author where primaryemail='$authoremail' and reviewerselection IS NOT NULL"; 
     $query = $dbh->prepare($sql); 
@@ -433,7 +433,7 @@ function IsReviewerLoggedIn($authoremail) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."layout/login");
+        redirect($location);
     }
 }
 // Functions that reviewer is logged in or not

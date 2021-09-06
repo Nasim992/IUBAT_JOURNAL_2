@@ -14,4 +14,3 @@ unset($_SESSION['login']);
 session_destroy(); // destroy session
 redirect($BASE_URL);
 exit;
-?>

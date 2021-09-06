@@ -1,8 +1,4 @@
 <?php
-session_start();
-include 'config.php';
-include 'functions.php';
-include '../mail_functions.php';
 
     //  ----------------------------------Sending Review --------------------------------------------
 if(isset($_POST['send-review']))
@@ -18,7 +14,7 @@ if(isset($_POST['send-review']))
               // Send Review Message Section Starts Here 
               include '../mailmessage/sendreview.php';
               // Send Review Message Section Ends Here 
-    send_mail($primaryemailauthor, $subject, $msg,$FORM_EMAIL,$FORM_EMAIL_PASS);
+    send_mail($primaryemailauthor,$subject,$msg,$FORM_EMAIL,$FORM_EMAIL_PASS);
     set_message('
     <div class="notification-div">
               <div class="container" id="flash-message">
