@@ -132,8 +132,10 @@ if(mysqli_query($link, $sql)){
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/authors'; </script>";
+   // echo "<script type='text/javascript'> document.location = 'authors'; </script>";
     //header("refresh:0;url=authors"); 
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+    
 } else{ 
     set_message('
     <div class="notification-div">
@@ -142,8 +144,10 @@ if(mysqli_query($link, $sql)){
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/authors'; </script>";
+   // echo "<script type='text/javascript'> document.location = 'authors'; </script>";
     // header("refresh:0;url=authors");
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
+    
     
 }
  

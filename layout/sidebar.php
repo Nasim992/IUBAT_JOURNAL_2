@@ -1,6 +1,6 @@
    <!-- Admin logged in or not -->
 <?php if(TotalNumberOfRowsWhere($ADMIN_DB,"email",$email)>0){ ?>
-        <a href="<?php echo $BASE_URL; ?>admin/dashboard" class="sidebars pt-5"><i class="fas fa-tachometer-alt"></i>&nbsp Dashboard</a>
+        <a href="<?php echo $BASE_URL; ?>admin/" class="sidebars pt-5"><i class="fas fa-tachometer-alt"></i>&nbsp Dashboard</a>
         <a href="<?php echo $BASE_URL; ?>admin/publishedpaper" class="sidebars"><i class="far fa-newspaper"></i>&nbsp Published Paper</a>
         <a href="<?php echo $BASE_URL; ?>admin/unpublishedpaper" class="sidebars"><i class="far fa-newspaper"></i>&nbsp Unpublished Paper</a>
         <a href="<?php echo $BASE_URL; ?>admin/updateprofile" class="sidebars"><i class="fas fa-user-shield"></i>&nbsp Update Profile</a>

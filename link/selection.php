@@ -24,8 +24,7 @@ $paperid=rtrim($_GET['id'],"u");
 if (!empty($_GET['id'])) {
     if($total_available==0) {
         echo "<script>alert('This id is not available');</script>";
-        header("refresh:0;url=unpublishedpaper");
-        exit;
+        echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     } 
 }
 if(empty($_GET['id'])) {
@@ -36,7 +35,7 @@ if(empty($_GET['id'])) {
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+    echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
 }
 
 
@@ -128,7 +127,7 @@ if(isset($_POST['accept-paper']))
                 </div>
           </div>
       ');
-      echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+      echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
     else {
         set_message('
@@ -138,7 +137,7 @@ if(isset($_POST['accept-paper']))
                   </div>
             </div>
         ');
-        echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+        echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
 
     }
 }
@@ -168,7 +167,7 @@ if(isset($_POST['reject-paper']))
                 </div>
           </div>
       ');
-      echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+      echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
     else {
     set_message('
@@ -178,7 +177,7 @@ if(isset($_POST['reject-paper']))
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+    echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
 } 
 
@@ -207,7 +206,7 @@ if(isset($_POST['send-review']))
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+    echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
     else {
         set_message('
@@ -217,7 +216,7 @@ if(isset($_POST['send-review']))
                   </div>
             </div>
         ');
-        echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+        echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
 }
 // Sending Review to the author section ends here 
@@ -257,7 +256,7 @@ if(isset($_POST['select-reviewer']))
                 </div>
           </div>
       ');
-      echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+      echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
     else {
     set_message('
@@ -267,7 +266,7 @@ if(isset($_POST['select-reviewer']))
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+    echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
 
     }
 }
@@ -312,7 +311,7 @@ if(isset($_POST['select-reviewer-outside']))
                 </div>
           </div>
       ');
-      echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+      echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
     else {
         set_message('
@@ -322,7 +321,7 @@ if(isset($_POST['select-reviewer-outside']))
                   </div>
             </div>
         ');
-        echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+        echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
     }
 }else {
     set_message('
@@ -332,7 +331,7 @@ if(isset($_POST['select-reviewer-outside']))
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+    echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
 }
         
 }
@@ -368,7 +367,7 @@ if(isset($_POST['select-associate-editor']))
                         </div>
                   </div>
               ');
-              echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+              echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
       }
       else {
         set_message('
@@ -378,7 +377,7 @@ if(isset($_POST['select-associate-editor']))
                   </div>
             </div>
         ');
-        echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+        echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
       }
 }
 // Associate Editor selection section ends here 
@@ -413,7 +412,7 @@ if(isset($_POST['select-academic-editor']))
                         </div>
                   </div>
               ');
-              echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+              echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
       }
       else {
         set_message('
@@ -423,7 +422,7 @@ if(isset($_POST['select-academic-editor']))
                   </div>
             </div>
         ');
-        echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+        echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
       }
       
 }
@@ -617,7 +616,7 @@ if(isset($_POST['deletepaperchiefeditor'])) {
                           </div>
                     </div>
                 ');
-                echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+                echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
             } else{
                 set_message('
                 <div class="notification-div">
@@ -626,7 +625,7 @@ if(isset($_POST['deletepaperchiefeditor'])) {
                           </div>
                     </div>
                 ');
-                echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+                echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
             }
             // mysqli_close($link);
             }
@@ -690,7 +689,7 @@ if(isset($_POST['chief-update'])) {
                       </div>
                 </div>
             ');
-            echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+            echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
   }
   else {
     set_message('
@@ -700,6 +699,6 @@ if(isset($_POST['chief-update'])) {
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = '../chiefeditor/unpublishedpaper'; </script>";
+    echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
   }
 }

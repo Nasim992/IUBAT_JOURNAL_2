@@ -10,7 +10,7 @@ $msg .= "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href=$BASE_URL.'resetpassword.php?email=$pemail&token=$validation_code_password'>CLICK HERE TO RESET YOUR PASSWORD
+             'href='$BASE_URL_2/message/resetpassword.php?email=$pemail&token=$validation_code_password'>CLICK HERE TO RESET YOUR PASSWORD
    </a>
    <br>
    <hr>

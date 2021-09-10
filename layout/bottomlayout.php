@@ -253,6 +253,28 @@ $(document).ready(function() {
         $('.dataTables_length').addClass('bs-select');
     });
 
+    $(function($) {
+        $('#example').DataTable();
+
+        $('#example2').DataTable({
+            "scrollY": "300px",
+            "scrollCollapse": true,
+            "paging": false
+        });
+
+        $('#example3').DataTable();
+    });
+
+    $(document).ready(function() {
+        $('#dtBasicExample').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+
+    $(document).ready(function() {
+        $('#dtBasicExample2').DataTable();
+        $('.dataTables_length').addClass('bs-select');
+    });
+
 </script>
      
 

@@ -1,4 +1,7 @@
 <?php 
+function clean($string){
+    return htmlentities($string);
+}
 
 // Mysqli Query Function starts Here 
 function query($query){
@@ -436,4 +439,3 @@ function IsReviewerLoggedIn($authoremail,$location) {
         redirect($location);
     }
 }
-// Functions that reviewer is logged in or not

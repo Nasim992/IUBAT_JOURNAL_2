@@ -19,7 +19,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href=$BASE_URL.'login'>CLICK HERE TO LOG IN TO THE SYSTEM
+             'href='$BASE_URL_2/layout/login'>CLICK HERE TO LOG IN TO THE SYSTEM
    </a>
    <br>
 <hr>

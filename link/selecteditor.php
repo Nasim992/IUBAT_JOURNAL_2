@@ -17,7 +17,8 @@ include 'functions.php';
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/selecteditor");
+       // redirect($BASE_URL."chiefeditor/selecteditor");
+        header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
     else {
         set_message('
@@ -27,7 +28,8 @@ include 'functions.php';
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/selecteditor");
+      //  redirect($BASE_URL."chiefeditor/selecteditor");
+      header("Location: " . $_SERVER["HTTP_REFERER"]);
      }
     }
 
@@ -48,7 +50,8 @@ if(isset($_POST['select-academiceditor'])) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/selecteditor");
+       // redirect($BASE_URL."chiefeditor/selecteditor");
+       header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
     else {
         set_message('
@@ -58,7 +61,8 @@ if(isset($_POST['select-academiceditor'])) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/selecteditor");
+      //  redirect($BASE_URL."chiefeditor/selecteditor");
+      header("Location: " . $_SERVER["HTTP_REFERER"]);
      }
     }
 
@@ -79,7 +83,8 @@ if(isset($_POST['select-author'])) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/selecteditor");
+      //  redirect($BASE_URL."chiefeditor/selecteditor");
+      header("Location: " . $_SERVER["HTTP_REFERER"]);
      }
     else {
         set_message('
@@ -89,7 +94,8 @@ if(isset($_POST['select-author'])) {
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/selecteditor");
+       // redirect($BASE_URL."chiefeditor/selecteditor");
+       header("Location: " . $_SERVER["HTTP_REFERER"]);
      }
 
  }

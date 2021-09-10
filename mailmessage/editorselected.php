@@ -20,7 +20,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href=$BASE_URL.'acceptrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO ACCEPT
+             'href='$BASE_URL_2/message/acceptrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO ACCEPT
    </a>
    <p>You have been selected as an Editor till <b>$endingdate</b></p>
    <br>
@@ -33,7 +33,7 @@ $msg = "
              border:none;
              border-radius:10px;
              font-weight:bold;
-             'href=$BASE_URL.'rejectrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO REJECT
+             'href='$BASE_URL_2/message/rejectrequesteditor.php?paperid=$paperid&email=$pemail'>CLICK HERE TO REJECT
    </a>
    <br>
 <hr>

@@ -10,13 +10,15 @@ define('DB_NAME','iubat');
 
 // URL
 $BASE_URL = 'http://localhost/IUBAT_JOURNAL_2/';
+$BASE_URL_2='http://localhost/IUBAT_JOURNAL_2';
 // $BASE_URL = 'https://journal.iubat.edu/';
+//$BASE_URL_2='http://localhost/IUBAT_JOURNAL_2';
+
 
 // Form Email Name 
-
 $FORM_EMAIL = "journal.iubat@gmail.com";
 $FORM_EMAIL_PASS = "iubat123";
-
+$FORM_EMAIL_HOST = "ssl://smtp.gmail.com";
 
 
 // Folder Directory Path

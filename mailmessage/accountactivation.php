@@ -13,8 +13,8 @@ $msg = "
              padding:10px;
              border:none;
              border-radius:10px;
-             font-weight:bold;
-             'href=$BASE_URL.'activate.php?email=$pemail&code=$validation_code'>CLICK HERE TO VERIFY
+             font-weight:bold;'
+             href='$BASE_URL_2/message/activate.php?email=$pemail&code=$validation_code'>Click here to verify
    </a>
    <br>
    <hr>

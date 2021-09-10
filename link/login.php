@@ -103,7 +103,7 @@ if(isset($_POST['editor-login'])) {
               </div>
         </div>
     ');
-    redirect($BASE_URL."admin");
+    redirect($BASE_URL."admin/");
     }else {
     // Admin
     // Chiefeditor 
@@ -233,6 +233,10 @@ if(isset($_POST['sign-up'])){
 
     $validation_code = md5($username . microtime()); 
     
+         // Activation Link sending Messages starts here
+         include '../mailmessage/accountactivation.php'; 
+         // Activation Link sending Messages section ends here  
+    
     if(is_author_available($pemail)>0) {
         set_message('
         <div class="notification-div">
@@ -268,19 +272,16 @@ if(isset($_POST['sign-up'])){
         if (!empty($revieweremail)) {
                 $selectreviewerselection = "UPDATE author set reviewerselection=1 where primaryemail='$pemail'";
                 mysqli_query($link,$selectreviewerselection);  
-            }
-                // Activation Link sending Messages starts here
-                include '../mailmessage/accountactivation.php'; 
-                // Activation Link sending Messages section ends here                  
-                send_mail($pemail, $subject, $msg,$FORM_EMAIL,$FORM_EMAIL_PASS);
-                set_message('
+            }                
+            send_mail($pemail, $subject, $msg,$FORM_EMAIL,$FORM_EMAIL_PASS);
+            set_message('
                 <div class="notification-div">
                           <div class="container" id="flash-message">
-                          <p class="alert alert-success alert-dismissible" id="message">Activation link sent to your email.$pemail</p>
+                          <p class="alert alert-success alert-dismissible" id="message">Activation link sent to your email.Please Check and verify your account</p>
                           </div>
                     </div>
                 ');
-                redirect($BASE_URL."layout/login");
+            redirect($BASE_URL."layout/login");
     } else{
         set_message('
         <div class="notification-div">
@@ -330,7 +331,7 @@ if(isset($_POST['rsubmit']))  {
         set_message('
         <div class="notification-div">
                   <div class="container" id="flash-message">
-                  <p class="alert alert-warning alert-dismissible" id="message">Already Account Exists,Try to logged in or try resetting password</p>
+                  <p class="alert alert-warning alert-dismissible" id="message">Account Does not Exists,Try to logged in or try resetting password</p>
                   </div>
             </div>
         ');
@@ -341,10 +342,50 @@ if(isset($_POST['rsubmit']))  {
         set_message('
         <div class="notification-div">
                   <div class="container" id="flash-message">
-                  <p class="alert alert-warning alert-dismissible" id="message">Already Account Exists,Try to logged in or try resetting password</p>
+                  <p class="alert alert-warning alert-dismissible" id="message">Account Does not Exists,Try to logged in or try resetting password</p>
                   </div>
             </div>
         ');
         redirect($BASE_URL."layout/login");
     }
+}
+
+// Admin Logged INTO
+
+if(isset($_POST['admin-login']))  {
+
+    $email = $_POST['input-email']; 
+    $password = md5($_POST['input-password']);
+    $_SESSION["email"]=$_POST['input-email']; 
+
+    $sql ="SELECT email,password FROM admin WHERE email=:email and password=:password";
+    $query= $dbh -> prepare($sql);
+    $query-> bindParam(':email', $email, PDO::PARAM_STR);
+    $query-> bindParam(':password', $password, PDO::PARAM_STR);
+    $query-> execute(); 
+
+    $results=$query->fetchAll(PDO::FETCH_OBJ);
+ 
+    if($query->rowCount() > 0)
+    { 
+    $_SESSION['alogin']=$_POST['input-email'];
+    set_message('
+    <div class="notification-div">
+              <div class="container" id="flash-message">
+              <p class="alert alert-success alert-dismissible" id="message">Logged in Success</p>
+              </div>
+        </div>
+    ');
+    redirect($BASE_URL."admin/");
+    } else{     
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">Logged in Failed. Try Again</p>
+                  </div>
+            </div>
+        ');
+        redirect($BASE_URL."journal_admin");
+    }
+
 }
