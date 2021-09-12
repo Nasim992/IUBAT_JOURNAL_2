@@ -1,9 +1,27 @@
 <?php 
-     $TITLE = "Edit Feedback - IUBAT Review";
+     $TITLE = "Reviewed paper- IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAcademicEditorLoggedIn($email,$BASE_URL."layout/login");
      include "../layout/navbar.php";
+         //  --------------------Selecting paper id form Academic Editor ------------------------
+
+         $sql = "SELECT editortable.id,editortable.paperid,editortable.username,editortable.feedback,editortable.academiceditor from editortable Where primaryemail='$email' and feedback IS NOT NULL and academiceditor IS NOT NULL";
+         $query = $dbh->prepare($sql); 
+         $query->execute(); 
+         $results=$query->fetchAll(PDO::FETCH_OBJ); 
+         $cnt=1;
+         if($query->rowCount() > 0) 
+         {
+         $arraypaperidreviewer = array();
+         foreach($results as $result) 
+         { 
+             $paperid = htmlentities($result->paperid);
+             array_push($arraypaperidreviewer,$paperid);
+         }
+     }
+   
+ // --------------------- Selecting paper id form Academic Editor ------------------------
     ?>
       
     <!-- Author showing header sections ends   -->
@@ -17,6 +35,7 @@
         <div class="container">
             <!-- --------------------------------Reviewed paper -------------------------------- -->
             <h6>REVIEWED PAPER</h6>
+            <?php display_message(); ?>
             <hr class="bg-secondary">
             <div class="table-responsive">
                 <table id="dtBasicExample" cellspacing="0">

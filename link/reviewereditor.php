@@ -43,12 +43,24 @@
         if(mysqli_query($link, $sqlreviewer))
         {
           move_uploaded_file($filetmpreviewer,"../documents/review/".$namereviewer);
-          echo "<script>alert('Feedback Sent Successfully');</script>"; 
-          // header("refresh:0;url=reviewed-paper");
+          set_message('
+          <div class="notification-div">
+                    <div class="container" id="flash-message">
+                    <p class="alert alert-success alert-dismissible" id="message">Feedback sent Successfully</p>
+                    </div>
+              </div>
+          ');
+          echo "<script type='text/javascript'> document.location = 'reviewedpaper'; </script>";
         }
         else {
-          echo "<script>alert('Something went wrong');</script>";
-          // header("refresh:0;url=reviewed-paper");
+          set_message('
+          <div class="notification-div">
+                    <div class="container" id="flash-message">
+                    <p class="alert alert-warning alert-dismissible" id="message">something went wrong</p>
+                    </div>
+              </div>
+          ');
+          echo "<script type='text/javascript'> document.location = 'reviewedpaper'; </script>";
         }
 
       }

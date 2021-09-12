@@ -22,7 +22,7 @@ if(isset($_POST['send-review']))
               </div>
         </div>
     ');
-    redirect($BASE_URL."chiefeditor/rfeedback");
+    echo "<script type='text/javascript'> window.history.back(); </script>";
     }
     else {
         set_message('
@@ -32,7 +32,7 @@ if(isset($_POST['send-review']))
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/rfeedback");
+        echo "<script type='text/javascript'> window.history.back(); </script>";
     }
 }
 
@@ -64,7 +64,7 @@ if(isset($_POST['send-review']))
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/rfeedback");
+        echo "<script type='text/javascript'> window.history.back(); </script>";
       }
       else {
         set_message('
@@ -74,7 +74,7 @@ if(isset($_POST['send-review']))
                   </div>
             </div>
         ');
-        redirect($BASE_URL."chiefeditor/rfeedback");
+        echo "<script type='text/javascript'> window.history.back(); </script>";
       }
         }
 
@@ -96,7 +96,7 @@ if(isset($_POST['send-review']))
                           </div>
                     </div>
                 ');
-                redirect($BASE_URL."chiefeditor/rfeedback");
+                echo "<script type='text/javascript'> window.history.back(); </script>";
             }
             else {
                 set_message('
@@ -106,7 +106,7 @@ if(isset($_POST['send-review']))
                           </div>
                     </div>
                 ');
-                redirect($BASE_URL."chiefeditor/rfeedback");
+                echo "<script type='text/javascript'> window.history.back(); </script>";
             }
               }
          // Remove as  a Reviewer Section Ends Here 

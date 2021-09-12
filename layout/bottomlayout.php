@@ -274,7 +274,9 @@ $(document).ready(function() {
         $('#dtBasicExample2').DataTable();
         $('.dataTables_length').addClass('bs-select');
     });
-
+    function handleOutsideReviewer(){
+       document.getElementById('handleoutsidereviewer').style.display='block';
+    }
 </script>
      
 

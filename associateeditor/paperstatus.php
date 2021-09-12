@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Unpublished Paper - IUBAT Review";
+     $TITLE = "Paper Status - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAssociateEditorLoggedIn($email,$BASE_URL."layout/login");

@@ -7,11 +7,12 @@ use PHPMailer\PHPMailer\Exception;
 //require 'vendor/autoload.php';
 
 // use PHPMailer\PHPMailer\PHPMailer;
-// ----------------------------------------------------------------------------------------------------------------------
-// Function send Mail
+
 function send_mail($to,$subject,$message,$FORM_EMAIL,$FORM_EMAIL_PASS){
      global $FORM_EMAIL_HOST;
-    // Normal Php Mail Functions 
+
+ // Normal Php Mail Functions 
+// ----------------------------------------------------------------------------------------------------------------------
     // $headers = "Content-type: text/html\r\n";
 
     // $headers .= 'From:'.$FORM_EMAIL . "\r\n" . 
@@ -24,7 +25,6 @@ function send_mail($to,$subject,$message,$FORM_EMAIL,$FORM_EMAIL_PASS){
 //-----------------------------------------------------------------------------------------------------------------
 
     // include('smtp/PHPMailerAutoload.php');
-    
     // $mail = new PHPMailer();
     // $mail->IsSMTP();        
     // $mail->SMTPAuth = true;
@@ -50,25 +50,25 @@ function send_mail($to,$subject,$message,$FORM_EMAIL,$FORM_EMAIL_PASS){
     // }else{
     //     return 1;
     // }
-    // Php Mailer section starts
+
+
+// Php Mailer section starts
 //--------------------------------------------------------------------------------------------------
-
-//Using PHP Mailer Functions 
-
     //Load Composer's autoloader
-require 'vendor/autoload.php';
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+    require 'vendor/autoload.php';
+   //Create an instance; passing `true` enables exceptions
+   $mail = new PHPMailer(true);
 
     //Server settings
-   // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = $FORM_EMAIL_HOST;                     //Set the SMTP server to send through
+   // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                   //Enable verbose debug output
+    $mail->isSMTP();                                           //Send using SMTP
+    $mail->Host       = $FORM_EMAIL_HOST;                      //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = $FORM_EMAIL;                     //SMTP username
-    $mail->Password   = $FORM_EMAIL_PASS;                               //SMTP password
+    $mail->Username   = $FORM_EMAIL;                            //SMTP username
+    $mail->Password   = $FORM_EMAIL_PASS;                       //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
 
     //Recipients
     $mail->setFrom($FORM_EMAIL, 'IUBAT Journal');
@@ -77,12 +77,12 @@ $mail = new PHPMailer(true);
     // $mail->addCC('cc@example.com');
     // $mail->addBCC('bcc@example.com');
 
+
     //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true);                                      //Set email format to HTML
     $mail->Subject = $subject;
     $mail->Body    = $message;
 
     return ($mail->send());
-
 }
 // ----------------------------------------------------------------------------------------------------------------------

@@ -65,13 +65,17 @@ function display_message_MODAL(){
 }
 // Redirect Function section starts Here 
 function redirect($location){
-    return header("Location: {$location}");
+    echo "<script type='text/javascript'> document.location = '$location'; </script>";
+     header("Location:{$location}");
+     exit();
 }
 //  Functions that logged in or not 
 function checkLoggedInOrNot($location) {
     if(strlen($_SESSION['alogin'])=="")  
-    {     
-        return header("Location: {$location}");
+    {    
+    echo "<script type='text/javascript'> document.location = '$location'; </script>"; 
+     header("Location:{$location}");
+     exit();
     }   
 }
 
@@ -90,7 +94,8 @@ function IsAuthorLoggedIn($authoremail,$location){
                   </div>
             </div>
         ');
-        redirect($location);
+       redirect($location);
+       // echo "<script type='text/javascript'> document.location = $location; </script>";
       }
 } 
 

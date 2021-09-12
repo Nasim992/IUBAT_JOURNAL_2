@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Dashboard - IUBAT Review";
+     $TITLE = "Feedback - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsReviewerLoggedIn($email,$BASE_URL."layout/login");
@@ -20,6 +20,7 @@
 
             <!-- ---------------------------------------Reviewer Feedback -------------------------------------------------------- -->
             <h5>REVIEWER FEEDBACK</h5>
+            <?php display_message(); ?>
             <hr>
             <!-- Paper SHowing Section Starts Here  -->
 

@@ -1,10 +1,11 @@
 <?php 
-     $TITLE = "Feedback - IUBAT Review";
+     $TITLE = "Reviewer Feedback - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAdminLoggedIn($email,$BASE_URL."layout/login");
      $editoremail = $email;
      include "../layout/navbar.php";
+     include "../link/rfeedback.php";
 ?>
  <!-- Author showing header sections ends   -->
     <div id="mySidebar" class="sidebar">

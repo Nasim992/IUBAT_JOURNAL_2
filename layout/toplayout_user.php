@@ -5,12 +5,10 @@ include '../link/config.php';
 include '../link/functions.php';
 include '../link/count.php';
 include '../mail_functions.php';
-
 // Find logged in or not
 if (isset($_SESSION['alogin'])){
   $email = $_SESSION["email"];
 }
-
 ?>
 
 
@@ -21,7 +19,7 @@ if (isset($_SESSION['alogin'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="The IUBAT Review is a multidisciplinary academic journal that the editors intend to publish annually. The office of the journal is located at the International University of Business Agriculture and Technology, the first non-government university in Bangladesh.">
-        <link rel="shortcut icon" href="<?php echo $IMAGE_DIR; ?>iubat-logo.png">
+        <link rel="icon" href="<?php echo $IMAGE_DIR; ?>iubat-logo.png">
         <link rel="stylesheet" href="<?php echo $CSS_DIR; ?>index.css">
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="<?php echo $CSS_DIR; ?>bootstrap.4.5.3.min.css">
@@ -44,6 +42,11 @@ if (isset($_SESSION['alogin'])){
     <link rel="stylesheet" href="<?php echo $CSS_DIR; ?>jquery.dataTables.min.css">
 
     <title><?php echo empty($TITLE)?"IUBAT Review":$TITLE; ?></title>
+    <style>
+          #handleoutsidereviewer {
+        display:none;
+    }
+    </style>
 
     </head>
     <body>

@@ -256,7 +256,7 @@ if(isset($_POST['select-reviewer']))
                 </div>
           </div>
       ');
-      echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
+      echo "<script type='text/javascript'> window.history.back(); </script>";
     }
     else {
     set_message('
@@ -266,7 +266,7 @@ if(isset($_POST['select-reviewer']))
               </div>
         </div>
     ');
-    echo "<script type='text/javascript'> document.location = 'unpublishedpaper'; </script>";
+    echo "<script type='text/javascript'> window.history.back(); </script>";
 
     }
 }
@@ -280,7 +280,15 @@ if(isset($_POST['select-reviewer-outside']))
     $pemail = $_POST['email'];
 
     if(is_author_available($pemail) > 0) {
-        echo "<script type='text/javascript'>alert('User is already registered');</script>";
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-warning alert-dismissible" id="message">User is already registered. Please Select Below</p>
+                  </div>
+            </div>
+        ');
+        echo "<script type='text/javascript'> window.history.back(); </script>";
+    
     }else {
     //  Count that same email and paper id is availale or not 
     $querypublished = "SELECT COUNT(*) as total_rowspublished FROM reviewertable WHERE paperid='$paperid' and primaryemail='$pemail'";

@@ -152,7 +152,7 @@
       <?php  } else { ?> 
 
       <li class="nav-item active mydropdowncss">
-        <a class="nav-link donate" href="<?php echo $BASE_URL; ?>layout/logout">Logout<span class="sr-only">(current)</span></a>
+        <a class="nav-link donate" href="<?php echo $BASE_URL; ?>layout/logout" onclick="return confirm('Are you sure you want to log out to the system?')">Logout<span class="sr-only">(current)</span></a>
       </li>
 
       <?php  } ?>

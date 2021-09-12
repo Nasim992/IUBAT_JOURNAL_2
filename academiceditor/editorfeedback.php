@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Edit Feedback - IUBAT Review";
+     $TITLE = "Editor Feedback - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAcademicEditorLoggedIn($email,$BASE_URL."layout/login");

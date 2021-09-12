@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Editors - IUBAT Review";
+     $TITLE = "Feedback - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAssociateEditorLoggedIn($email,$BASE_URL."layout/login");
@@ -20,6 +20,7 @@
 
     <!-- --------------------------------------Reviewer Feedback Section -------------------------------------------------- -->
     <h6>REVIEWER FEEDBACK</h6>
+    <?php display_message(); ?>
     <hr class="bg-secondary">
     <div class="table-responsive table-responsive-lg table-responsize-xl table-responsive-sm">
         <table id="dtBasicExample" class="table table-striped table-bordered table-hover">

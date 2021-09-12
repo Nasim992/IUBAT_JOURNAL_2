@@ -19,7 +19,7 @@
          <a href="#" class="sidebars"></a>
 
          <a href="#"  class="pt-5"><h4>Welcome, Back</h6><br><h6 class="text-danger"><i><b><?php echo returnSingleValue($ADMIN_DB,"fullname","email",$email); ?></b></i></h6></a>
-         
+ 
 
 <!-- Chief editor Logged IN -->
      <?php }else if(TotalNumberOfRowsWhere($CHIEFEDITOR_DB,"email",$email)>0){ ?>
@@ -60,7 +60,11 @@
         <a href="<?php echo $BASE_URL; ?>associateeditor/efeedback"  class="sidebars" title="Editor Feedback"><i class="fas fa-comments"></i>&nbsp Editor Feeedback</a>
 
         <a href="#"  class="pt-5"><h4>Welcome, Back</h6><br><h6 class="text-danger"><i><b><?php echo returnSingleValue($USER_DB,"title","primaryemail",$email).returnSingleValue($USER_DB,"firstname","primaryemail",$email).returnSingleValue($USER_DB,"middlename","primaryemail",$email).returnSingleValue($USER_DB,"lastname","primaryemail",$email); ?></b></i></h6></a>
+        <?php if(TotalNumberOfRowsWhereTWO_AND($USER_DB,"activation","primaryemail",1,$email)>=0){ ?>
 
+        <?php } else{?>
+        <button class=" btn btn-danger" title="Activate your Account"><small>Account is not activated.Please Check your Email for Activation</small></button>
+        <?php }?>
 
 
         <!-- Academic Editor  -->
@@ -87,6 +91,11 @@
        
        <a href="#"  class="pt-5"><h4>Welcome, Back</h6><br><h6 class="text-danger"><i><b><?php echo returnSingleValue($USER_DB,"title","primaryemail",$email).returnSingleValue($USER_DB,"firstname","primaryemail",$email).returnSingleValue($USER_DB,"middlename","primaryemail",$email).returnSingleValue($USER_DB,"lastname","primaryemail",$email); ?></b></i></h6></a>
 
+       <?php if(TotalNumberOfRowsWhereTWO_AND($USER_DB,"activation","primaryemail",1,$email)>=0){ ?>
+
+        <?php } else{?>
+        <button class=" btn btn-danger" title="Activate your Account"><small>Account is not activated.Please Check your Email for Activation</small></button>
+        <?php }?>
 
         <?php }else { ?>
 
@@ -96,4 +105,13 @@
         <a href="<?php echo $BASE_URL; ?>author/updateprofile"  class="sidebars" title="Update your profile"><i class="fas fa-sync"></i>&nbsp Update profile</a>
         <a href="<?php echo $BASE_URL; ?>author/changepassword"  class="sidebars"title="Change your password"><i class="fas fa-unlock-alt"></i>&nbsp Change password</a>
         <a href="<?php echo $BASE_URL; ?>author/reviewerstatus"  class="sidebars" title="See your Reviewed paper"><i class="far fa-newspaper"></i>&nbsp Reviewed paper</a>
+        <a href="#"  class="pt-5"><h4>Welcome, Back</h6><br><h6 class="text-danger"><i><b><?php echo returnSingleValue($USER_DB,"title","primaryemail",$email).returnSingleValue($USER_DB,"firstname","primaryemail",$email).returnSingleValue($USER_DB,"middlename","primaryemail",$email).returnSingleValue($USER_DB,"lastname","primaryemail",$email); ?></b></i></h6></a>
+
+        <?php if(TotalNumberOfRowsWhereTWO_AND($USER_DB,"activation","primaryemail",1,$email)>=0){ ?>
+
+        <?php } else{?>
+        <button class=" btn btn-danger" title="Activate your Account"><small>Account is not activated.Please Check your Email for Activation</small></button>
+       <?php }?>
+
+
 <?php } ?>

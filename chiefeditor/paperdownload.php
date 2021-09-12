@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Published Paper- IUBAT Review";
+     $TITLE = "Paper- IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsChiefEditorLoggedIn($email,$BASE_URL."layout/login");
@@ -39,13 +39,20 @@
             </div>
             <?php }?> -->
 
-            <?php  if(!empty($filename2)) { ?>
+            <?php  if(!empty($filepathresubmitname)) { ?>
             <div class="col-sm-12 col-md-4 col-xl-4 col-lg-4 col-xl-4">
+                <a style="font-size:14px;" class="btn btn-success btn-sm "
+                    href="<?php echo $filepathresubmit; ?> " target="_blank" role="button">Full Manuscript as pdf
+                </a>
+            </div>
+            <?php } else {?>
+                <div class="col-sm-12 col-md-4 col-xl-4 col-lg-4 col-xl-4">
                 <a style="font-size:14px;" class="btn btn-success btn-sm "
                     href="<?php echo $filepathsecond; ?> " target="_blank" role="button">Full Manuscript as pdf
                 </a>
             </div>
-            <?php }?>
+
+            <?php  } ?>
 
             <?php if(!empty($file['name'])) {?>
             <div class="col-sm-12 col-md-4 col-xl-4 col-lg-4 ">

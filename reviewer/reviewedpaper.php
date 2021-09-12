@@ -1,10 +1,31 @@
 <?php 
-     $TITLE = "Dashboard - IUBAT Review";
+     $TITLE = "Reviewed paper - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsReviewerLoggedIn($email,$BASE_URL."layout/login");
      include "../layout/navbar.php";
      $authoremail = $email;
+
+             // Select paper id from reviewertable section starts here
+
+             $sql = "SELECT reviewertable.id,reviewertable.paperid,reviewertable.username,reviewertable.feedback from reviewertable Where primaryemail='$authoremail' and feedback IS NOT NULL";
+             $query = $dbh->prepare($sql); 
+             $query->execute(); 
+             $results=$query->fetchAll(PDO::FETCH_OBJ); 
+             $cnt=1; 
+             if($query->rowCount() > 0) 
+             {
+             $arraypaperidreviewer = array();
+             foreach($results as $result) 
+             { 
+                 $paperid = htmlentities($result->paperid);
+                 array_push($arraypaperidreviewer,$paperid);
+             }
+         }
+       
+             // Select Paper id From reviewertable section ends here
+     
+
 ?>
       
           <!-- Author showing header sections ends   -->
@@ -19,6 +40,7 @@
 
             <!-- --------------------------------Reviewed paper -------------------------------- -->
             <h6>REVIEWED PAPER</h6>
+            <?php display_message(); ?>
             <hr class="bg-secondary">
             <div class="table-responsive">
                 <table id="dtBasicExample" cellspacing="0">

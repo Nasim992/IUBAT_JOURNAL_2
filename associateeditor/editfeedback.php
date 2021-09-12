@@ -7,7 +7,7 @@
      $authoremail = $email;
      include '../link/editfeedback.php'; 
 ?>
-
+ 
 <div id="mySidebar" class="sidebar">
         <?php include '../layout/sidebar.php'; ?>
     </div>

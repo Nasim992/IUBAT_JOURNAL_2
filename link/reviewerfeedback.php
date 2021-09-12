@@ -53,15 +53,24 @@
         include '../mailmessage/rfeedbackmail.php';
         send_mail($chiefmail, $subject, $msg,$FORM_EMAIL,$FORM_EMAIL_PASS);
         //  Reviewed messages sending 
-
-          echo "<script>alert('Feedback Sent Successfully');</script>";
-          header("refresh:0;url=reviewedpaper");
-          exit;
-        }
+        set_message('
+        <div class="notification-div">
+                  <div class="container" id="flash-message">
+                  <p class="alert alert-success alert-dismissible" id="message">Feedback Sent Successfully</p>
+                  </div>
+            </div>
+        ');
+        echo "<script type='text/javascript'> document.location = 'reviewedpaper'; </script>";
+        } 
         else {
-          echo "<script>alert('Something went wrong');</script>";
-          header("refresh:0;url=reviewerfeedback");
-          exit;
+          set_message('
+          <div class="notification-div">
+                    <div class="container" id="flash-message">
+                    <p class="alert alert-warning alert-dismissible" id="message">Something went wrong</p>
+                    </div>
+              </div>
+          ');
+          echo "<script type='text/javascript'> document.location = 'reviewerfeedback'; </script>";
         }
       }
       // Reviewer Paper Section Ends Here 

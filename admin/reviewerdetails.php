@@ -1,11 +1,12 @@
 <?php 
-     $TITLE = "Admin Information - IUBAT Review";
+     $TITLE = "Reviewer Details  - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAdminLoggedIn($email,$BASE_URL."layout/login");
      $editoremail = $email;
      include "../layout/navbar.php";
      $results = all_by_SPECIFIC_ID($CHIEFEDITOR_DB,"email",$editoremail);
+     include "../link/reviewerdetails.php";
 ?>
 
 <div id="mySidebar" class="sidebar">

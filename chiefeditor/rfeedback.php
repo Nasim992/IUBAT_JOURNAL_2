@@ -5,6 +5,7 @@
      IsChiefEditorLoggedIn($email,$BASE_URL."layout/login");
      $editoremail = $email;
      include "../layout/navbar.php";
+     include "../link/rfeedback.php";
 ?>
  <!-- Author showing header sections ends   -->
     <div id="mySidebar" class="sidebar">
@@ -15,9 +16,9 @@
         <a href="#"><span class="openbtn" onclick="openNav()" id="closesign">☰</span></a>
         <a href="javascript:void(0)" class="closebtn" id="closesignof" onclick="closeNav()">×</a>
         <div class="container">
-        <?php echo display_message(); ?>
             <!-- --------------------------------------Reviewer Feedback Section -------------------------------------------------- -->
             <h6>REVIEWER FEEDBACK</h6>
+            <?php echo display_message(); ?>
             <hr class="bg-secondary">
             <div class="table-responsive table-responsive-lg table-responsize-xl table-responsive-sm">
                 <table id="dtBasicExample" class="table table-striped table-bordered table-hover">
@@ -106,7 +107,7 @@
                                 ?>
                             </td>
                             <td>
-                                <form method="post" action="../link/rfeedback.php">
+                                <form method="post"enctype="multipart/form-data">
                                     <input type="hidden" name="paperid" value="<?php echo $paperid;?>">
                                     <input type="hidden" name="username" value="<?php echo $username?>">
                                     <input type="hidden" name="primaryemailauthor"

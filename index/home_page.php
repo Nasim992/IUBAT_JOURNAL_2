@@ -12,7 +12,7 @@ $maximumyear = returnMaxValue($ARCHIVE_DB,"versionissue");
             <span>A Multidisciplinary Academic Journal</span>
             <div>
                 <a class="btn btn-info" title="About Journal" href="<?php echo $BASE_URL; ?>index/journal_info">About Journal ></a>
-                <a class="btn btn-info" title="Submit Article" href="<?php echo $BASE_URL; ?>index/login">Submit An Article ></a>
+                <a class="btn btn-info" title="Submit Article" href="<?php echo $BASE_URL; ?>author/uploadpaper">Submit An Article ></a>
             </div>
             <div>
             </div>

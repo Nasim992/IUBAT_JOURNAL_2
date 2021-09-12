@@ -4,6 +4,7 @@
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAcademicEditorLoggedIn($email,$BASE_URL."layout/login");
      include "../layout/navbar.php";
+     include "../link/editfeedback.php";
 ?>
       
     <!-- Author showing header sections ends   -->

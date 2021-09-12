@@ -6,6 +6,7 @@
      $editoremail = $email;
      include "../layout/navbar.php";
     // $results = all_by_SPECIFIC_ID($CHIEFEDITOR_DB,"email",$editoremail);
+    include "../link/editordetails.php";
 ?>
 
 <div id="mySidebar" class="sidebar">

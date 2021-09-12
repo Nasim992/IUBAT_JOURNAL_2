@@ -19,6 +19,7 @@
 <div class="container">
 
     <h5>UNPUBLISHED PAPER</h5>
+    <?php display_message(); ?>
     <hr class="bg-secondary">
 
     <div class="jumbotron">

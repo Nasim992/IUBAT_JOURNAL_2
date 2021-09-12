@@ -1,5 +1,5 @@
 <?php 
-     $TITLE = "Chiefeditor dashboard - IUBAT Review";
+     $TITLE = "Admin Dashboard - IUBAT Review";
      include "../layout/toplayout_user.php";
      checkLoggedInOrNot($BASE_URL."layout/login");
      IsAdminLoggedIn($email,$BASE_URL."layout/login");

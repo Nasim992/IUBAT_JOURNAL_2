@@ -40,7 +40,7 @@
 
     <h6>REVIEWED PAPER</h6>
     <hr class="bg-secondary">
-
+    <?php display_message(); ?>
     <div class="table-responsive table-responsive-lg table-responsize-xl table-responsive-sm p-4">
         <table id="dtBasicExample" cellspacing="0">
 
