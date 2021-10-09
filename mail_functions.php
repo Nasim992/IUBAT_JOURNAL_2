@@ -1,16 +1,12 @@
 <?php 
-include 'link/config.php';
+// include 'link/config.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//require 'vendor/autoload.php';
-
-// use PHPMailer\PHPMailer\PHPMailer;
-
 function send_mail($to,$subject,$message,$FORM_EMAIL,$FORM_EMAIL_PASS){
-     global $FORM_EMAIL_HOST;
 
+     global $FORM_EMAIL_HOST;
  // Normal Php Mail Functions 
 // ----------------------------------------------------------------------------------------------------------------------
     // $headers = "Content-type: text/html\r\n";
@@ -27,17 +23,18 @@ function send_mail($to,$subject,$message,$FORM_EMAIL,$FORM_EMAIL_PASS){
     // include('smtp/PHPMailerAutoload.php');
     // $mail = new PHPMailer();
     // $mail->IsSMTP();        
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;  
     // $mail->SMTPAuth = true;
     // $mail->SMTPSecure = 'tls';
-    // $mail->Host = " according your domain ";
+    // $mail->Host = $FORM_EMAIL_HOST;
     // $mail->Port = 587;
     // $mail->IsHTML(true);
     // $mail->CharSet = 'UTF-8';
-    // $mail->Username = "journal@iubat.net";
-    // $mail->Password = " what you have given ";
-    // $mail->SetFrom("journal@iubat.net");
+    // $mail->Username = $FORM_EMAIL;
+    // $mail->Password = $FORM_EMAIL_PASS;
+    // $mail->SetFrom($FORM_EMAIL);
     // $mail->Subject = $subject;
-    // $mail->Body =$msg;
+    // $mail->Body =$message;
     // $mail->AddAddress($to);
     // $mail->SMTPOptions=array('ssl'=>array(
     // 'verify_peer'=>false,
@@ -45,15 +42,12 @@ function send_mail($to,$subject,$message,$FORM_EMAIL,$FORM_EMAIL_PASS){
     // 'allow_self_signed'=>false
     // ));
 
-    // if(!$mail->Send()){
-    //     return 0;
-    // }else{
-    //     return 1;
-    // }
-
+    // return $mail->Send();
+   
 
 // Php Mailer section starts
 //--------------------------------------------------------------------------------------------------
+// Php Mailer section starts
     //Load Composer's autoloader
     require 'vendor/autoload.php';
    //Create an instance; passing `true` enables exceptions

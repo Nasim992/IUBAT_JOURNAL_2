@@ -7,7 +7,6 @@ define('DB_NAME','iubat');
 // Establish database connection.
 
 
-
 // URL
 $BASE_URL = 'http://localhost/IUBAT_JOURNAL_2/';
 $BASE_URL_2='http://localhost/IUBAT_JOURNAL_2';

@@ -58,7 +58,7 @@
                                         foreach($results as $result)  
                                         {  
                                             $filepathname = htmlentities($result->filename);
-                                            $filepath = 'documents/archivefile/'.$filepathname;
+                                            $filepath = '../documents/archivefile/'.$filepathname;
                                             $publishdatestring = htmlentities($result->publisheddate);
                                             $publishdate = date("Y",strtotime($publishdatestring));
                                         ?>
@@ -120,7 +120,7 @@
                                         foreach($results as $result)  
                                         {  
                                             $filepathname = htmlentities($result->filename);
-                                            $filepath = 'documents/archivefile/'.$filepathname;
+                                            $filepath = '../documents/archivefile/'.$filepathname;
                                             $publishdatestring = htmlentities($result->publisheddate);
                                             $publishdate = date("Y",strtotime($publishdatestring));
                                         ?>
@@ -181,7 +181,7 @@
                                     foreach($results as $result)  
                                     {  
                                         $filepathname = htmlentities($result->filename);
-                                        $filepath = 'documents/archivefile/'.$filepathname;
+                                        $filepath = '../documents/archivefile/'.$filepathname;
                                         $publishdatestring = htmlentities($result->publisheddate);
                                         $publishdate = date("Y",strtotime($publishdatestring));
                                     ?>
@@ -243,7 +243,7 @@
                             foreach($results as $result)  
                             {  
                                 $filepathname = htmlentities($result->filename);
-                                $filepath = 'documents/archivefile/'.$filepathname;
+                                $filepath = '../documents/archivefile/'.$filepathname;
                                 $publishdatestring = htmlentities($result->publisheddate);
                                 $publishdate = date("Y",strtotime($publishdatestring));
                             ?>

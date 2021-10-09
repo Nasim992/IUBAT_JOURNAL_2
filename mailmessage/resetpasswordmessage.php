@@ -1,6 +1,6 @@
 <?php 
 $subject = "RESET YOUR PASSWORD";
-$msg .= "
+$msg = "
   <p> Please Click on the link below and give your new password for resetting your password.</p><br>
    <a style='text-decoration:none;
              font-size:18px; 
