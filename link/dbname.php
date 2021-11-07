@@ -17,7 +17,8 @@ $BASE_URL_2='http://localhost/IUBAT_JOURNAL_2';
 // Form Email Name 
 $FORM_EMAIL = "journal.iubat@gmail.com";
 $FORM_EMAIL_PASS = "iubat123";
-$FORM_EMAIL_HOST = "ssl://smtp.gmail.com";
+// $FORM_EMAIL_HOST = "ssl://smtp.gmail.com";
+$FORM_EMAIL_HOST = "localhost";
 
 
 // Folder Directory Path

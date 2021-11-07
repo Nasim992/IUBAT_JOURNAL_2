@@ -55,7 +55,10 @@ function send_mail($to,$subject,$message,$FORM_EMAIL,$FORM_EMAIL_PASS){
 
     //Server settings
    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                   //Enable verbose debug output
-    $mail->isSMTP();                                           //Send using SMTP
+    // $mail->isSMTP();          
+    // $mail->Host = 'localhost';
+    // $mail->SMTPAuth = false;
+    // $mail->SMTPAutoTLS = false;                                  //Send using SMTP
     $mail->Host       = $FORM_EMAIL_HOST;                      //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = $FORM_EMAIL;                            //SMTP username

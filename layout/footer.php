@@ -2,7 +2,7 @@
 
     <div class="container text-white text-center footer_contents">
 
-        <a href="<?php echo $BASE_URL; ?>"><img style="height:100px" src="<?php echo $IMAGE_DIR; ?>Iubat-logo.png"></a>
+        <a href="<?php echo $BASE_URL; ?>"><img style="height:100px" src="<?php echo $IMAGE_DIR; ?>iubat-logo.png"></a>
         <h4>IUBAT Review</h4>
         <h6>IUBAT— International University of Business Agriculture and Technology</h6><br>
         <p style="font-size:14px;">4 Embankment Drive Road,Sector-10, Uttara Model Town, Dhaka-1230.</p>
